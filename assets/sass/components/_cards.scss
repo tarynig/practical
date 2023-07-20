@@ -1,0 +1,62 @@
+.card {
+  position: relative;
+  text-align: center;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.26);
+  -webkit-box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.26);
+  &__popular {
+    font-size: 12px;
+    background: $color-primary;
+    color: $color-shade-0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3px $base-size;
+  }
+  &__cost {
+    font-weight: 600;
+    padding: 20px 0;
+  }
+  &__speed {
+    display: flex;
+    flex-direction: row;
+
+    > * {
+      flex-grow: 1;
+      position: relative;
+      text-align: left;
+      padding: 8px 8px 8px 32px;
+      font-size: 12px;
+      &::before {
+        display: block;
+        content: '';
+        height: 12px;
+        width: 12px;
+        background-image: url('assets/img/icons/icn-arrow.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: absolute;
+        top: 10px;
+        left: 8px;
+      }
+    }
+    &--up::before {
+      transform: rotate(180deg);
+    }
+  }
+  &__logo {
+    padding: $base-size;
+    background: $color-shade-1;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    object {
+      height: 30px;
+    }
+    object.logo-VUMA {
+      height: 20px;
+    }
+  }
+}

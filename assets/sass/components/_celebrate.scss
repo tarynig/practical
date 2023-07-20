@@ -1,0 +1,14 @@
+.vox-entry__map {
+  overflow: hidden;
+  position: relative;
+  &--right .vox-celebrate {
+    left: auto;
+    right: -75px;
+    transform: rotate(270deg);
+  }
+}
+.vox-celebrate {
+  position: absolute;
+  bottom: -75px;
+  left: -75px;
+}

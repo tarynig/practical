@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  src: url('assets/fonts/Montserrat-VariableFont_wght.ttf') format('woff2');
+}
+@font-face {
+  font-family: 'Baloo 2';
+  font-display: swap;
+  src: url('assets/fonts/Baloo2-VariableFont_wght.ttf') format('woff2');
+}
+html {
+  font-size: 16px;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: $color-font;
+}
+h1 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 800;
+}
+h2,
+.txt-h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+
+  &.vox-cta {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+.txt-h2 {
+  font-weight: 400;
+}
+.txt-center {
+  text-align: center;
+}
+// mobile
+@media (max-width: $break-size) {
+  h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  h2,
+  .txt-h2 {
+    &.vox-cta {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+  .txt-h2 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

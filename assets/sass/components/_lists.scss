@@ -1,0 +1,24 @@
+.vox-list {
+  margin: $base-size 0;
+  padding: 0 0 0 calc($base-size * 4);
+  li {
+    margin-bottom: calc($base-size * 2);
+    position: relative;
+  }
+  &--ticks {
+    list-style: none;
+    li:before {
+      display: block;
+      content: '';
+      width: 24px;
+      height: 24px;
+      background: url('assets/img/icons/icn-tick.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      left: calc($base-size * 4 * -1);
+      top: -3px;
+    }
+  }
+}

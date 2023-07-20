@@ -1,0 +1,72 @@
+$base-size: 8px;
+// For this layout only using tablet up break points
+$grid-breakpoints: (
+  xs: 0,
+  // sm: 576px,
+  // md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+$container-max-widths: (
+  xs: 100%,
+  // sm: 540px,
+  // md: 720px,
+  lg: 100%,
+  //lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+);
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 $base-size;
+}
+// Create container size for each breakpoint
+@each $grid-breakpoint, $container-max-width in $container-max-widths {
+  @media (min-width: $container-max-width) {
+    .container {
+      max-width: $container-max-width;
+    }
+  }
+}
+// rows
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * $base-size);
+  margin-right: calc(-1 * $base-size);
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+// grid columns based on Bootstrap for custom use
+$grid-columns: 12;
+
+@for $i from 1 through $grid-columns {
+  $width: percentage($i / $grid-columns);
+  .col-md-#{$i} {
+    flex-basis: $width;
+    max-width: $width;
+    padding-left: $base-size;
+    padding-right: $base-size;
+  }
+}
+
+$break-size: map-get($grid-breakpoints, 'lg');
+
+@media (max-width: $break-size) {
+  @for $i from 1 through $grid-columns {
+    $width: percentage($i / $grid-columns);
+    .col-md-#{$i} {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+}

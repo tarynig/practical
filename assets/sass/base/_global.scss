@@ -1,0 +1,85 @@
+// alignments
+.align-b {
+  align-self: flex-end;
+}
+.align-r {
+  direction: rtl;
+}
+// widths
+.w-100 {
+  width: 100%;
+}
+// margins
+.m-b {
+  margin-bottom: $base-size;
+}
+.m-l {
+  margin-left: calc($base-size * 2);
+}
+.m-b-medium {
+  margin-bottom: calc($base-size * 3);
+}
+
+// spacer
+.vox-spacer {
+  height: calc($base-size * 4);
+  &--large {
+    height: calc($base-size * 12);
+  }
+  @media (max-width: $break-size) {
+    height: calc($base-size * 2);
+    &--large {
+      height: calc($base-size * 6);
+    }
+  }
+}
+@media (min-width: calc($break-size + 1px)) {
+  .view-tablet {
+    display: none;
+  }
+}
+
+@media (max-width: $break-size) {
+  .view-desktop {
+    display: none;
+    &.vox-header__intro {
+      display: none;
+    }
+  }
+  .align-r--dt {
+    direction: ltr;
+  }
+  // change order of package info
+  .col-order-mobile-1 {
+    order: 1;
+  }
+  .col-order-mobile-2 {
+    order: 2;
+  }
+  .col-order-mobile-3 {
+    order: 3;
+  }
+}
+
+// notices
+.vox-notice {
+  padding: $base-size;
+  background: $color-shade-1;
+  border: 2px solid $color-shade-1;
+}
+// loading svg
+.spinner {
+  animation: rotation 1000ms linear;
+  animation-iteration-count: infinite;
+  height: 100px;
+  width: 100px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

@@ -1,0 +1,137 @@
+.vox-header {
+  background: linear-gradient(90deg, $color-primary 50%, $color-shade-0 50%);
+  &__logo {
+    position: absolute;
+    top: 32px;
+  }
+  &__wrap {
+    height: 640px;
+    &::before {
+      display: block;
+      content: '';
+      background: $color-primary;
+    }
+  }
+
+  &__intro {
+    background: $color-primary;
+    color: $color-shade-0;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    &__wrap {
+      position: relative;
+      margin: 0 -170px 0 0;
+    }
+    p {
+      margin: 0;
+    }
+    span {
+      background: $color-shade-0;
+      color: $color-primary;
+      font-size: 32px;
+      font-weight: 700;
+      padding: 0 calc($base-size * 2);
+      border-radius: 5px;
+      margin-top: 10px;
+      display: inline-block;
+    }
+  }
+  &__img {
+    background-color: $color-shade-1;
+    background: $color-shade-1 url('assets/img/hero.webp');
+    padding: 0;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    img.view-desktop {
+      height: 100%;
+    }
+    img.view-tablet {
+      width: 100%;
+    }
+  }
+  &__counter {
+    .col-md-3 {
+      max-width: 64px;
+      padding-left: calc($base-size / 2);
+      padding-right: calc($base-size / 2);
+    }
+    .vox-counter {
+      height: 46%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .counter {
+      justify-content: center;
+    }
+    .vox-list {
+      margin-left: calc($base-size * 2);
+    }
+  }
+}
+// tablet
+@media (max-width: $break-size) {
+  .vox-header {
+    background: $color-shade-0;
+
+    &__logo {
+      position: static;
+      margin-top: $base-size;
+    }
+    &__img {
+      color: $color-shade-0;
+      font-weight: 600;
+      text-align: center;
+      position: relative;
+      * {
+        position: relative;
+      }
+      &::before {
+        display: block;
+        content: '';
+        background: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      h1 {
+        background: $color-primary;
+
+        padding-top: calc($base-size * 6);
+      }
+      &__cta {
+        img {
+          margin-top: -30px;
+        }
+        span {
+          background: $color-primary;
+          color: $color-shade-0;
+          padding: 3px 8px;
+          border-radius: 5px;
+        }
+        p:first-child {
+          margin: 32px 0 -8px 0;
+        }
+        p:nth-child(2) {
+          font-size: 24px;
+        }
+      }
+    }
+    &__wrap {
+      height: auto;
+      &::before {
+        display: none;
+      }
+    }
+    &__counter {
+      .vox-counter {
+        height: auto;
+        margin-bottom: calc($base-size * 3);
+      }
+    }
+  }
+}

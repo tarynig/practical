@@ -1,0 +1,122 @@
+input[type='radio'],
+input[type='checkbox'],
+input[type='submit'],
+label,
+select,
+.btn {
+  &:hover {
+    cursor: pointer;
+  }
+}
+input,
+.btn {
+  background: $color-shade-1;
+  color: $color-font;
+  border: 0;
+  min-height: 56px;
+  padding: 0 $base-size;
+  @media (min-width: calc($break-size + 1px)) {
+    padding: 0 calc($base-size * 2);
+  }
+  &::placeholder {
+    color: $color-font;
+  }
+  &::-webkit-input-placeholder {
+    color: $color-font;
+  }
+  &::-ms-input-placeholder {
+    color: $color-font;
+  }
+}
+
+.vox-form-group {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: calc($base-size * 2);
+  input {
+    flex-grow: 1;
+  }
+}
+
+// buttons
+.btn {
+  background: $color-secondary;
+  color: $color-shade-0;
+}
+
+// select dropdowns
+.vox-select-label {
+  position: relative;
+  padding: 0;
+  select {
+    padding: 5px 8px;
+    font-size: 16px;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    color: $color-font;
+    appearance: none;
+    position: relative;
+    z-index: 1;
+    &:focus:hover + .vox-select-label__arrow {
+      transform: rotate(180deg);
+    }
+  }
+  &__arrow {
+    display: block;
+    background-color: $color-shade-0;
+    background-image: url('assets/img/icons/icn-dropdown.svg');
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 3px;
+    right: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.5s;
+  }
+}
+
+// Checkbox
+.vox-checkbox-label {
+  line-height: 24px;
+  position: relative;
+  padding-right: 40px;
+  input {
+    display: none;
+    + .vox-checkbox-label__arrow {
+      height: 24px;
+      width: 32px;
+      border-radius: 10px;
+      position: absolute;
+      background: $color-shade-1;
+      top: 0;
+      right: 0;
+      transition: all 0.5s;
+
+      &::after {
+        display: block;
+        content: '';
+        background: $color-shade-0;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        border-radius: 50%;
+        top: 5px;
+        right: 5px;
+      }
+    }
+    &:checked + .vox-checkbox-label__arrow {
+      background: $color-primary;
+      &::after {
+        background: $color-shade-0;
+        top: 5px;
+        right: auto;
+        left: 5px;
+      }
+    }
+  }
+  &__arrow {
+  }
+}

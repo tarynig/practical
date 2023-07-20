@@ -1,0 +1,18 @@
+.vox-entry {
+  &__map {
+    background-image: url('assets/img/map-1.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    &--right {
+      background-image: url('assets/img/map-2.svg');
+    }
+  }
+  &__form {
+    @media (min-width: calc($break-size + 1px)) {
+      padding: calc($base-size * 5);
+    }
+    p {
+      margin-top: 0;
+    }
+  }
+}
